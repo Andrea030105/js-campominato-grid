@@ -24,8 +24,11 @@ body {
     width: calc(700px / 10);
     height: calc(700px / 10);
     border: 1px solid black;
-    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.bg-aqua {
+    background-color: aqua;
 }

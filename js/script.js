@@ -23,6 +23,7 @@ function randomNumber(min, max) {
         const currentSquare = createSquare(i);
         grid.appendChild(currentSquare);
         currentSquare.addEventListener("click", function () {
+            this.classList.add("bg-aqua");
             console.log(i)
         })
     }
