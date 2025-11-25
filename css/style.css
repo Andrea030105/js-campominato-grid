@@ -32,3 +32,24 @@ body {
 .bg-aqua {
     background-color: aqua;
 }
+
+.container-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0;
+}
+
+.btn {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+}

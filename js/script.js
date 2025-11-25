@@ -14,24 +14,34 @@ Aggiungere una select accanto al bottone di genrazione, che fornisca una scelta 
 - con difficoltà 3=> 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 */
 
-const grid = document.getElementById("grid");
-randomNumber(1, 100);
+const btn_Genera = document.getElementById("btn-genera");
+
+btn_Genera.addEventListener("click", function () {
+    btnGenera();
+})
+
+function btnGenera() {
+
+    const grid = document.getElementById("grid");
+    randomNumber(1, 100);
 
 
-function randomNumber(min, max) {
-    for (let i = min; i <= max; i++) {
-        const currentSquare = createSquare(i);
-        grid.appendChild(currentSquare);
-        currentSquare.addEventListener("click", function () {
-            this.classList.add("bg-aqua");
-            console.log(i)
-        })
+    function randomNumber(min, max) {
+        for (let i = min; i <= max; i++) {
+            const currentSquare = createSquare(i);
+            grid.appendChild(currentSquare);
+            currentSquare.addEventListener("click", function () {
+                this.classList.add("bg-aqua");
+                console.log(i)
+            })
+        }
+
     }
 
-}
+    function createSquare() {
+        const square = document.createElement("div");
+        square.classList.add("square");
+        return square;
+    }
 
-function createSquare() {
-    const square = document.createElement("div");
-    square.classList.add("square");
-    return square;
 }
