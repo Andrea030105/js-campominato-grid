@@ -3,3 +3,28 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: #67ffd6;
+}
+
+.container {
+    width: 700px;
+    height: 700px;
+    margin: 7rem auto;
+    background-color: white;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.squere {
+    width: calc(700px / 10);
+    height: calc(700px / 10);
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
