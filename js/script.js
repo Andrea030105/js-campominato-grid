@@ -19,9 +19,18 @@ randomNumber(1, 100);
 
 
 function randomNumber(min, max) {
-
     for (let i = min; i <= max; i++) {
-        grid.innerHTML += `<div class="squere">${i}</div>`;
-        console.log(i);
+        const currentSquare = createSquare(i);
+        grid.appendChild(currentSquare);
+        currentSquare.addEventListener("click", function () {
+            console.log(i)
+        })
     }
+
+}
+
+function createSquare() {
+    const square = document.createElement("div");
+    square.classList.add("square");
+    return square;
 }
