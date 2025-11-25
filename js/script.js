@@ -17,31 +17,52 @@ Aggiungere una select accanto al bottone di genrazione, che fornisca una scelta 
 const btn_Genera = document.getElementById("btn-genera");
 
 btn_Genera.addEventListener("click", function () {
-    btnGenera();
-})
+    let diff = document.getElementById("diff").value;
+    let min;
+    let max;
 
-function btnGenera() {
+    if (diff == 3) {
+        min = 1;
+        max = 49;
+        btnGenera(min, max);
+    } else if (diff == 2) {
+        min = 1;
+        max = 81;
+        btnGenera(min, max);
+    } else {
+        min = 1;
+        max = 100;
+        btnGenera(min, max);
+    }
 
-    const grid = document.getElementById("grid");
-    randomNumber(1, 100);
+    function btnGenera(min, max) {
+        const grid = document.getElementById("grid");
+        randomNumber(min, max);
 
 
-    function randomNumber(min, max) {
-        for (let i = min; i <= max; i++) {
-            const currentSquare = createSquare(i);
-            grid.appendChild(currentSquare);
-            currentSquare.addEventListener("click", function () {
-                this.classList.add("bg-aqua");
-                console.log(i)
-            })
+        function randomNumber(min, max) {
+            for (let i = min; i <= max; i++) {
+                const currentSquare = createSquare(i);
+                grid.appendChild(currentSquare);
+                currentSquare.addEventListener("click", function () {
+                    this.classList.add("bg-aqua");
+                    console.log(i)
+                })
+            }
+
+        }
+
+        function createSquare() {
+            const square = document.createElement("div");
+            square.classList.add("square");
+            if (diff == 3) {
+                square.classList.add("square-3");
+            } else if (diff == 2) {
+                square.classList.add("square-2");
+            }
+            return square;
         }
 
     }
 
-    function createSquare() {
-        const square = document.createElement("div");
-        square.classList.add("square");
-        return square;
-    }
-
-}
+})
