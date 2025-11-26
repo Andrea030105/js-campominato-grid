@@ -24,6 +24,11 @@ body {
     width: calc(100% / 10);
     height: calc(700px / 10);
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 .square-2 {

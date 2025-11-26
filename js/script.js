@@ -37,15 +37,17 @@ btn_Genera.addEventListener("click", function () {
 
     function btnGenera(min, max) {
         const grid = document.getElementById("grid");
-        randomNumber(min, max);
+        generateGameGrid(min, max);
 
 
-        function randomNumber(min, max) {
+        function generateGameGrid(min, max) {
+            grid.innerHTML = "";
             for (let i = min; i <= max; i++) {
                 const currentSquare = createSquare(i);
                 grid.appendChild(currentSquare);
+                currentSquare.innerText = i;
                 currentSquare.addEventListener("click", function () {
-                    this.classList.add("bg-aqua");
+                    this.classList.toggle("bg-aqua");
                     console.log(i)
                 })
             }
